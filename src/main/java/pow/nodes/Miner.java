@@ -52,7 +52,7 @@ public class Miner implements Node {
         for (int i = block.getNonce(); i < Network.MAX_DIFFICULTY; block.calculateHashWithNewNonce()) {
             BigInteger hashResult = new BigInteger(block.getHash(), Constants.HEX);
             if (newMinedBlocks.hasNew()) {
-                System.out.println(this.name + ": mining stopped because they already found the puzzle");
+                System.out.println(this.name + ": mining stopped because they already solved the puzzle");
                 break;
             }
             if (hashResult.compareTo(target) < 0) {
